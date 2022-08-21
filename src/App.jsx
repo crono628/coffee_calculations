@@ -1,34 +1,62 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
+import React, { useState } from 'react';
 
 function App() {
-  const [count, setCount] = useState(0)
-
+  const [water, setWater] = useState(240);
+  const [ratio, setRatio] = useState(14);
+  const [beans, setBeans] = useState(water / ratio);
+  const handleChange = (e) => {
+    setBeans(e.target.value / ratio);
+    setWater(e.target.value);
+  };
+  const handleRatio = (e) => {
+    setRatio(e.target.value);
+    setBeans(water / e.target.value);
+  };
   return (
-    <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div>
+      <div className="big-c flex">
+        <div>C</div>
+        <div>
+          <div className="little-letters">offee</div>
+          <div className="little-letters">alculations</div>
+        </div>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
+      <div className="little-letters flex column">
+        <span className="flex">
+          <label htmlFor="ratio">Ratio:</label>
+          <input
+            className="little-letters"
+            style={{ width: '65px', marginLeft: '5px', paddingLeft: '10px' }}
+            type="number"
+            name="ratio"
+            id=""
+            min={10}
+            max={20}
+            onChange={handleRatio}
+            value={ratio}
+          />
+        </span>
+        <div style={{ fontSize: '12px', marginLeft: '5px' }}>
+          {' '}
+          (lower number is stronger)
+        </div>
+        <div style={{ marginTop: '2rem' }}>Water: {water}</div>
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <div className="flex column little-letters">
+        <input
+          style={{ width: '200px', marginLeft: '5px', paddingLeft: '10px' }}
+          step={10}
+          type="range"
+          name=""
+          onChange={handleChange}
+          value={water}
+          min="240"
+          max="2000"
+        />
+        <div>Beans: {Math.round(beans)}</div>
+      </div>{' '}
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
