@@ -13,8 +13,8 @@
   font-size: 80px;
 }
 
-.little-letters {
-  font-size: 20px;
+.small-letters {
+  font-size: 1.2rem;
 }
 
 .flex {
@@ -25,4 +25,43 @@
 
 .column {
   flex-direction: column;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.relative {
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.app-container {
+  max-width: 350px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.width-100 {
+  width: 100%;
+}
+
+.width-80 {
+  width: 80%;
+}
+
+.margin-top-30 {
+  margin-top: 30px;
 }
