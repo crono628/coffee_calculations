@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 function App() {
-  const [water, setWater] = useState(240);
+  const [water, setWater] = useState(250);
   const [ratio, setRatio] = useState(14);
   const [beans, setBeans] = useState(water / ratio);
   const handleChange = (e) => {
@@ -23,15 +23,15 @@ function App() {
       </div>
       <div className="little-letters flex column">
         <span className="flex">
-          <label htmlFor="ratio">Ratio:</label>
+          <label htmlFor="ratio">Ratio: {ratio}</label>
           <input
             className="little-letters"
             style={{ width: '65px', marginLeft: '5px', paddingLeft: '10px' }}
-            type="number"
+            type="range"
             name="ratio"
             id=""
-            min={10}
-            max={20}
+            min="10"
+            max="20"
             onChange={handleRatio}
             value={ratio}
           />
@@ -50,8 +50,8 @@ function App() {
           name=""
           onChange={handleChange}
           value={water}
-          min="240"
-          max="2000"
+          min="250"
+          max="1250"
         />
         <div>Beans: {Math.round(beans)}</div>
       </div>{' '}
