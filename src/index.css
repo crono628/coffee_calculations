@@ -1,16 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Silkscreen&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap');
 *,
 ::after,
 ::before {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: 'Silkscreen', cursive;
+  font-family: 'Comfortaa', cursive;
+  /* font-family: 'Silkscreen', cursive; */
+}
+
+.title {
+  font-family: 'Comfortaa', cursive;
+  font-size: 2rem;
+  margin: 1rem;
 }
 
 .big-c {
-  font-size: 80px;
+  font-size: 2.5rem;
+  font-weight: bolder;
 }
 
 .small-letters {
