@@ -4,7 +4,6 @@ import Slider from '@mui/material/Slider'
 function App() {
   const [water, setWater] = useState(250)
   const [ratio, setRatio] = useState(14)
-  const [beans, setBeans] = useState(water / ratio)
   const handleWater = (e) => {
     const newWater = e.target.value
     setWater(newWater)
@@ -14,13 +13,7 @@ function App() {
   const handleRatio = (e) => {
     const newRatio = e.target.value
     setRatio(newRatio)
-    // const newBeans = water / newRatio
-    // setBeans(newBeans)
   }
-
-  useEffect(() => {
-    setBeans(water / ratio)
-  }, [water, ratio])
 
   return (
     <div className="app-container">
@@ -54,14 +47,16 @@ function App() {
         <Slider
           value={water}
           onChange={handleWater}
-          step={25}
+          step={10}
           min={250}
           max={1250}
           size="large"
         />
       </div>
       <div className="relative" style={{ fontSize: '1.5rem' }}>
-        <span className=" width-100">Beans: {Math.round(beans)} grams</span>
+        <span className=" width-100">
+          Beans: {Math.round(water / ratio)} grams
+        </span>
       </div>
     </div>
   )
