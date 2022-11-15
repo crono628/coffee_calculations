@@ -5,13 +5,17 @@ function App() {
   const [water, setWater] = useState(250)
   const [ratio, setRatio] = useState(14)
   const [beans, setBeans] = useState(water / ratio)
-  const handleChange = (e) => {
-    setBeans(e.target.value / ratio)
-    setWater(e.target.value)
+  const handleWater = (e) => {
+    const newWater = e.target.value
+    setWater(newWater)
+    const newBeans = newWater / ratio
+    setBeans(newBeans)
   }
   const handleRatio = (e) => {
-    setRatio(e.target.value)
-    setBeans(water / e.target.value)
+    const newRatio = e.target.value
+    setRatio(newRatio)
+    const newBeans = water / newRatio
+    setBeans(newBeans)
   }
   return (
     <div className="app-container">
@@ -44,7 +48,7 @@ function App() {
       <div className="small-letters margin-top-30 width-80">
         <Slider
           value={water}
-          onChange={handleChange}
+          onChange={handleWater}
           step={25}
           min={250}
           max={1250}

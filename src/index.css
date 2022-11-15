@@ -10,6 +10,10 @@
   /* font-family: 'Silkscreen', cursive; */
 }
 
+html {
+  background-color: white;
+}
+
 .title {
   font-family: 'Comfortaa', cursive;
   font-size: 2rem;
