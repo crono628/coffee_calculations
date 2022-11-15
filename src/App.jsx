@@ -61,6 +61,7 @@ function App() {
           onChange={handleWater}
           list="tickmarks"
           step={25}
+          value={water}
         />
         <datalist id="tickmarks">
           <option value="250" label="250 ml"></option>
