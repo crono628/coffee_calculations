@@ -44,14 +44,31 @@ function App() {
         </div>
       </div>
       <div className="small-letters margin-top-30 width-80">
-        <Slider
+        {/* <Slider
           value={water}
           onChange={handleWater}
-          step={10}
+          step={25}
           min={250}
           max={1250}
           size="large"
+        /> */}
+        <input
+          type="range"
+          min="250"
+          max="1250"
+          className="slider"
+          id="myRange"
+          onChange={handleWater}
+          list="tickmarks"
+          step={25}
         />
+        <datalist id="tickmarks">
+          <option value="250" label="250 ml"></option>
+          <option value="500" label="500 ml"></option>
+          <option value="750" label="750 ml"></option>
+          <option value="1000" label="1000 ml"></option>
+          <option value="1250" label="1250 ml"></option>
+        </datalist>
       </div>
       <div className="relative" style={{ fontSize: '1.5rem' }}>
         <span className=" width-100">
