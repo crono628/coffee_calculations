@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Slider from '@mui/material/Slider'
 
 function App() {
@@ -8,15 +8,20 @@ function App() {
   const handleWater = (e) => {
     const newWater = e.target.value
     setWater(newWater)
-    const newBeans = newWater / ratio
-    setBeans(newBeans)
+    // const newBeans = newWater / ratio
+    // setBeans(newBeans)
   }
   const handleRatio = (e) => {
     const newRatio = e.target.value
     setRatio(newRatio)
-    const newBeans = water / newRatio
-    setBeans(newBeans)
+    // const newBeans = water / newRatio
+    // setBeans(newBeans)
   }
+
+  useEffect(() => {
+    setBeans(water / ratio)
+  }, [water, ratio])
+
   return (
     <div className="app-container">
       <div className="big-c flex">
